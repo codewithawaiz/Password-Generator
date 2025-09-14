@@ -1,9 +1,8 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 
 body {
     min-height: 100vh;
@@ -17,53 +16,61 @@ body {
     background-size: cover;
 }
 
+/* Main Container */
 .container {
     border: 0.5px solid black;
-    border-radius: 30px;
+    border-radius: 20px;
     padding: 28px 32px;
     display: flex;
     flex-direction: column;
-
-    /* 🔥 semi-transparent background so text is readable */
+    align-items: center;
     background: rgba(41, 218, 212, 0.85);
 
-    
+    /* responsive width */
+    width: 90%;
+    max-width: 400px;
 }
 
-
-.container h1{
-    font-size: 1.4rem;
-    margin-block: 8px;
+.container h1 {
+    font-size: 1.6rem;
+    margin-block: 12px;
+    text-align: center;
 }
 
-.passBox{
+/* Password Box */
+.passBox {
     background-color: #fff;
     border: none;
     outline: none;
     padding: 10px;
-    width: 300px;
+    width: 100%;
     border-radius: 4px;
-    font-size: 20px;
-    margin-block:8px;
-
-}
-
-.row{
-    display: flex;
+    font-size: 18px;
     margin-block: 8px;
 }
 
-.row p, .row label{
+/* Rows */
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-block: 8px;
+    width: 100%;
+}
+
+.row p,
+.row label {
     flex-basis: 100%;
     font-size: 18px;
 }
 
-.row input[type="checkbox"]{
-    height:20px;
-    width:16px;
+.row input[type="checkbox"] {
+    height: 20px;
+    width: 16px;
 }
 
-.GenBtn{
+/* Button */
+.GenBtn {
     border: none;
     outline: none;
     background-color: #2459a8;
@@ -71,25 +78,73 @@ body {
     color: #fff;
     font-size: 18px;
     font-weight: 700;
-    margin-block: 8px;
+    margin-block: 10px;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 6px;
+    transition: 0.3s;
+    width: 100%;
 }
 
-.GenBtn:hover{
+.GenBtn:hover {
     background-color: #002760;
 }
 
-.inputBox{
+/* Input Box & Copy Icon */
+.inputBox {
     position: relative;
+    width: 100%;
 }
 
-.inputBox i{
+.inputBox i {
     position: absolute;
-    margin: -25px;
-    padding-top: 45px;
-    padding-right: 50px;
-    font-size: larger;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 22px;
     cursor: pointer;
 }
 
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+
+    .container h1 {
+        font-size: 1.3rem;
+    }
+
+    .passBox {
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    .row p,
+    .row label {
+        font-size: 16px;
+    }
+
+    .GenBtn {
+        font-size: 16px;
+        padding: 10px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        padding: 24px;
+    }
+
+    .container h1 {
+        font-size: 1.4rem;
+    }
+
+    .passBox {
+        font-size: 17px;
+    }
+
+    .GenBtn {
+        font-size: 17px;
+        padding: 12px;
+    }
+}
